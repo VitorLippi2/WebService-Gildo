@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<produto>
+    <nome>Notebook</nome>
+    <precoUnitario>3500.00</precoUnitario>
+    <quantidade>10</quantidade>
+    <categoria>Eletrônicos</categoria>
+
+    <fabricante>
+        <nome>Tech Brasil</nome>
+        <endereco>
+            <rua>Rua da Tecnologia</rua>
+            <numero>1000</numero>
+            <cep>01000-000</cep>
+            <cidade>São Paulo</cidade>
+            <estado>SP</estado>
+        </endereco>
+    </fabricante>
+</produto>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caderneta>
+    <contato>
+        <nome>João da Silva</nome>
+        <rua>Rua das Flores</rua>
+        <numero>123</numero>
+        <cep>36000-000</cep>
+    </contato>
+
+    <contato>
+        <nome>Maria Souza</nome>
+        <rua>Avenida Brasil</rua>
+        <numero>456</numero>
+        <cep>36010-000</cep>
+    </contato>
+</caderneta>
