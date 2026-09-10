@@ -1,0 +1,12 @@
+GET http://localhost:4567/games HTTP/1.1
+
+###
+
+POST http://localhost:4567/games HTTP/1.1
+Content-Type: application/json
+{
+    "id": 123,
+    "titl1e": "GTA VI",
+    "price": 600,
+    "year": 2026
+}

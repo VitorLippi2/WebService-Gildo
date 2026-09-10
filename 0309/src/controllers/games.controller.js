@@ -5,16 +5,24 @@ export const findAll = (_, res) => {
 }
 
 export const findOne = (req, res) => {
-    if(!isNaN(req.params.id)){
-        const id = parseInt(req.params.id);
-        const game= games.find(g => g.id == id);
+    const {id} = req.params;
 
-        if(game){
-            return res.status(200).json(game);
-        }else{
-            return res.sendStatus(404);
-        }
+    const game = games.find(g => g.id == id);
+
+    if (game){
+        return res.status(200).json(game);
     }else{
-        res.sendStatus(400);
+        return res.sendStatus(404);
     }
 }
+
+export const create = (req, res) => {
+    console.log(req.body);
+    const {id, title, price, year} = req.body;
+
+    games.push({
+        id, title, price, year
+    });
+
+    return res.sendStatus(200);
+} 
