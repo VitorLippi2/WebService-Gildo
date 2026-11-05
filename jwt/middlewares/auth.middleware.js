@@ -1,5 +1,10 @@
+import dotenv from "dotenv"
+dotenv.config()
+
 import jsonwebtoken from "jsonwebtoken"
-import { PRIVATE_KEY, user } from "../models/user.model.js"
+import { user } from "../models/user.model.js"
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY
 
 export function tokenValidated(req, res, next) {
     const [, token] = req.headers.authorization?.split(" ") || ["",""]

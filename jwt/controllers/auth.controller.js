@@ -1,5 +1,9 @@
+import dotenv from "dotenv"
+dotenv.config()
 import jsonwebtoken from "jsonwebtoken";
-import {user, PRIVATE_KEY} from "../models/user.model.js";
+import {user} from "../models/user.model.js";
+
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 export function publicInfo(_, res){
     

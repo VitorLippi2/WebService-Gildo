@@ -1,0 +1,3 @@
+IVAN DEMONIO COLOCA UM ARQUIVO CHAMADO .env na RAÍZ do diretorio com a variavel
+
+PRIVATE_KEY=SUA_CHAVE_AQUI
