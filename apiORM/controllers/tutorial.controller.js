@@ -69,7 +69,7 @@ export const remove = (req, res) => {
     })
     .then(num => {
         if (num == 1){
-            return res.sendStatus(204)
+            return res.sendjStatus(204)
         }else{
             return res.status(404).json({
                 message: "Não foi possível deletar. Provavelmente não foi encontrado"

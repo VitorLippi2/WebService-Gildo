@@ -1,0 +1,11 @@
+{
+    "caderneta": {
+        "contato" : {
+        "nome": "João da Silva",
+        "rua": "Rua das Flores",
+        "numero": 123,
+        "cep": "36000-000"
+        }
+    },
+
+}
