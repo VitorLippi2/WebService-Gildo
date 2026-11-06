@@ -1,6 +1,6 @@
 import db from "../models/index.js";
 
-const Pokemon = db.pokemon
+const Pokemon = db.pokemons
 const Tipo = db.tipos
 
 export const findAll = async(req, res) => {
@@ -62,14 +62,14 @@ export const addTipoToPokemon = async (req, res) => {
         const tipo = await Tipo.findByPk(tipoId)
         if(!tipo){
             return res.status(404).json({
-                message: "Pokemon não encontrado!"
+                message: "Tipo não encontrado!"
             })
         }
 
         await pokemon.addTipo(tipo);
 
         return res.status(200).json({
-            message: `O tipo ${tipo} foi adicionado ao pokemon ${pokemon}.`
+            message: `O tipo ${tipo.nome} foi adicionado ao pokemon ${pokemon.nome}.`
         })
 
     }catch(e){

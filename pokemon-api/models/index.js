@@ -18,13 +18,15 @@ db.tipos = tipoModel(sequelize, DataTypes)
 db.pokemons.belongsToMany(db.tipos, {
     through: "pokemons_tipos",
     as: "tipos",
-    foreignKey: "pokemon_id"
+    foreignKey: "pokemon_id",
+    otherKey: "tipo_id"
 })
 
-db.pokemons.belongsToMany(db.pokemons, {
+db.tipos.belongsToMany(db.pokemons, {
     through: "pokemons_tipos",
-    as: "pokemon",
-    foreignKey: "tipo_id"
+    as: "pokemons",
+    foreignKey: "tipo_id",
+    otherKey: "pokemon_id"
 })
 
 export default db

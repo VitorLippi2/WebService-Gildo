@@ -1,11 +1,12 @@
-import Pokemon from "../models/pokemon.model"
-import Tipo from "../models/pokemon.tipo"
+import db from "../models/index.js";
 
+const Pokemon = db.pokemons
+const Tipo = db.tipos
 
 export const create = async(req, res) => {
     try{
         if(!req.body.nome){
-            res.status(400).json({
+            return res.status(400).json({
                 message: "O nome é obrigatório."
             })
         }
@@ -14,7 +15,7 @@ export const create = async(req, res) => {
             nome: req.body.nome
         }
 
-        const data = await Pokemon.create(pokemon);
+        const data = await Tipo.create(tipo);
 
         return res.status(201).json(data);
     }catch(e){
@@ -24,7 +25,7 @@ export const create = async(req, res) => {
     }
 }
 
-export const addPokemonToTipo = async (req, params) => {
+export const addPokemonToTipo = async (req, res) => {
     const {tipoId} = req.params
     const {pokemonId} = req.body
 
@@ -46,14 +47,14 @@ export const addPokemonToTipo = async (req, params) => {
         const pokemon = await Pokemon.findByPk(pokemonId)
         if(!pokemon){
             return res.status(404).json({
-                message: "Tipo não encontrado."
+                message: "Pokemon não encontrado."
             })
         }
     
         await tipo.addPokemon(pokemon)
     
         return res.status(200).json({
-            message: `O pokemon ${pokemon.nome} foi adicionado ao tipo ${tipo}`
+            message: `O pokemon ${pokemon.nome} foi adicionado ao tipo ${tipo.nome}`
         })
     }catch(e){
         return res.status(500).json({
